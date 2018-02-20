@@ -1,0 +1,22 @@
+Author: Lars Tangvald <lars.tangvald@oracle.com>
+Bug-Ubuntu: https://launchpad.net/bugs/1565003
+Forwarded: no
+Last-Update: 2016-04-01
+Subject: Use my_load_defaults, not load_defaults
+
+The function load_defaults, using in apps/snmptrapd_sql.c is not exported from
+libmysqlclient20, so the build will fail.  However, the function
+my_load_defaults is exported, and has the same signature except for an extra
+flags parameter, which can be set to 0.
+
+--- a/apps/snmptrapd_sql.c
++++ b/apps/snmptrapd_sql.c
+@@ -444,7 +444,7 @@
+ #endif
+ 
+     /** load .my.cnf values */
+-    load_defaults ("my", _sql.groups, &not_argc, &not_argv);
++    my_load_defaults ("my", _sql.groups, &not_argc, &not_argv, 0);
+     for(i=0; i < not_argc; ++i) {
+         if (NULL == not_argv[i])
+             continue;

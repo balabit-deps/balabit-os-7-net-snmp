@@ -1,0 +1,34 @@
+From d072d7f84f11c4c798c26f5d2b50d4082ec9049c Mon Sep 17 00:00:00 2001
+From: Niels Baggesen <nba@users.sourceforge.net>
+Date: Thu, 13 Apr 2017 11:23:09 +0200
+Subject: [PATCH] swinst_apt.c: Fix indexing of hrSWInstalledTable to start
+ from 1.
+
+Fixes bug 2770. Thanks to Edward Hu for reporting.
+
+Forwarded: no (backport)
+Author: Christian Ehrhardt <christian.ehrhardt@canonical.com>
+Original-Author: Niels Baggesen <nba@users.sourceforge.net>
+Origin: upstream, git://git.code.sf.net/p/net-snmp/code
+Bug-Ubuntu: https://bugs.launchpad.net/bugs/1314760
+Last-Update: 2018-02-20
+---
+ agent/mibgroup/host/data_access/swinst_apt.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/agent/mibgroup/host/data_access/swinst_apt.c b/agent/mibgroup/host/data_access/swinst_apt.c
+index c7606d2..1119e29 100644
+--- a/agent/mibgroup/host/data_access/swinst_apt.c
++++ b/agent/mibgroup/host/data_access/swinst_apt.c
+@@ -64,7 +64,7 @@ netsnmp_swinst_arch_load( netsnmp_container *container, u_int flags)
+     char status[SNMP_MAXBUF];
+     char buf[BUFSIZ];
+     netsnmp_swinst_entry *entry;
+-    int i = 0;
++    int i = 1;
+ 
+     if (p == NULL) {
+ 	snmp_perror("dpkg-list");
+-- 
+2.7.4
+
