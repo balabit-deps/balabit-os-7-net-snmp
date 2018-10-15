@@ -35,3 +35,4 @@ fix_engineid_reprobe.diff
 Port-OpenSSL-1.1.0-with-support-for-1.0.2.patch
 my_load_defaults
 0001-swinst_apt.c-Fix-indexing-of-hrSWInstalledTable-to-s.patch
+CVE-2018-18065.patch

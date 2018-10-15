@@ -1,3 +1,12 @@
+net-snmp (5.7.3+dfsg-1.8ubuntu3.1) bionic-security; urgency=medium
+
+  * SECURITY UPDATE: DoS via NULL pointer exception
+    - debian/patches/CVE-2018-18065.patch: fix logic in
+      agent/helpers/table.c.
+    - CVE-2018-18065
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Mon, 15 Oct 2018 10:16:15 -0400
+
 net-snmp (5.7.3+dfsg-1.8ubuntu3) bionic; urgency=medium
 
   * d/p/0001-swinst_apt.c-Fix-indexing-of-hrSWInstalledTable-to-s.patch:
