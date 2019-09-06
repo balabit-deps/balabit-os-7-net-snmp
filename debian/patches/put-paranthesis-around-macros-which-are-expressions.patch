@@ -1,0 +1,31 @@
+Description: fsys.h: put paranthesis around macros which are expressions
+ fsys.h: put paranthesis around macros which are expressions
+Author: Niels Baggesen <nba@users.sourceforge.net>
+Origin: upstream, https://github.com/net-snmp/net-snmp/commit/71e487212bd65839e7454df9701524d08cf0d74f
+Bug: https://sourceforge.net/p/net-snmp/patches/1350/
+Bug-Ubuntu: https://launchpad.net/bugs/1843036
+--- a/include/net-snmp/agent/hardware/fsys.h
++++ b/include/net-snmp/agent/hardware/fsys.h
+@@ -33,15 +33,15 @@
+    /*
+     * Additional enumerationis - not listed in that MIB
+     */
+-#define NETSNMP_FS_TYPE_IGNORE	   1 | _NETSNMP_FS_TYPE_LOCAL | _NETSNMP_FS_TYPE_SKIP_BIT
++#define NETSNMP_FS_TYPE_IGNORE	   (1 | _NETSNMP_FS_TYPE_LOCAL | _NETSNMP_FS_TYPE_SKIP_BIT)
+ 
+-#define NETSNMP_FS_TYPE_PROC	   2 | _NETSNMP_FS_TYPE_LOCAL | _NETSNMP_FS_TYPE_SKIP_BIT
++#define NETSNMP_FS_TYPE_PROC	   (2 | _NETSNMP_FS_TYPE_LOCAL | _NETSNMP_FS_TYPE_SKIP_BIT)
+ 
+-#define NETSNMP_FS_TYPE_DEVPTS	   3 | _NETSNMP_FS_TYPE_LOCAL | _NETSNMP_FS_TYPE_SKIP_BIT
+-#define NETSNMP_FS_TYPE_SYSFS	   4 | _NETSNMP_FS_TYPE_LOCAL | _NETSNMP_FS_TYPE_SKIP_BIT
+-#define NETSNMP_FS_TYPE_TMPFS	   5 | _NETSNMP_FS_TYPE_LOCAL
+-#define NETSNMP_FS_TYPE_USBFS	   6 | _NETSNMP_FS_TYPE_LOCAL
+-#define NETSNMP_FS_TYPE_AUTOFS	   7 | _NETSNMP_FS_TYPE_LOCAL | _NETSNMP_FS_TYPE_SKIP_BIT
++#define NETSNMP_FS_TYPE_DEVPTS	   (3 | _NETSNMP_FS_TYPE_LOCAL | _NETSNMP_FS_TYPE_SKIP_BIT)
++#define NETSNMP_FS_TYPE_SYSFS	   (4 | _NETSNMP_FS_TYPE_LOCAL | _NETSNMP_FS_TYPE_SKIP_BIT)
++#define NETSNMP_FS_TYPE_TMPFS	   (5 | _NETSNMP_FS_TYPE_LOCAL)
++#define NETSNMP_FS_TYPE_USBFS	   (6 | _NETSNMP_FS_TYPE_LOCAL)
++#define NETSNMP_FS_TYPE_AUTOFS	   (7 | _NETSNMP_FS_TYPE_LOCAL | _NETSNMP_FS_TYPE_SKIP_BIT)
+ 
+ #define NETSNMP_FS_FLAG_ACTIVE   0x01
+ #define NETSNMP_FS_FLAG_REMOTE   0x02

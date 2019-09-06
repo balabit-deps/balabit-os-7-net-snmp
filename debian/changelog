@@ -1,3 +1,25 @@
+net-snmp (5.7.3+dfsg-1.8ubuntu3.3) bionic; urgency=medium
+
+  * d/p/put-paranthesis-around-macros-which-are-expressions.patch:
+    - put paranthesis around macros which are expressions.
+    (LP: #1843036)
+
+  * d/p/fix-check-hr-filesys-autofs.patch:
+    - On Linux getmntent() is available but getfsstat() not.
+      Hence remove #if HAVE_GETFSSTAT from around the HRFS_type
+      check.
+
+ -- Eric Desrochers <eric.desrochers@canonical.com>  Fri, 06 Sep 2019 23:59:19 +0000
+
+net-snmp (5.7.3+dfsg-1.8ubuntu3.2) bionic; urgency=medium
+
+  * Skip autofs entries when calling statfs to prevent autofs being mounted on
+    snmpd startup (LP: #1835818):
+    - d/p/autofs-skip-autofs-entries.patch
+    - d/p/autofs-fix-a-recently-introduced-bug.patch
+
+ -- Ioanna Alifieraki <ioanna-maria.alifieraki@canonical.com>  Wed, 21 Aug 2019 12:55:14 +0100
+
 net-snmp (5.7.3+dfsg-1.8ubuntu3.1) bionic-security; urgency=medium
 
   * SECURITY UPDATE: DoS via NULL pointer exception
