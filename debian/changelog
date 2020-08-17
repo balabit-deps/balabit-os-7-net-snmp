@@ -1,3 +1,23 @@
+net-snmp (5.7.3+dfsg-1.8ubuntu3.5) bionic-security; urgency=medium
+
+  * SECURITY UPDATE: Elevation of privileges - symlink handling
+    - debian/patches/CVE-2020-15861.patch: stop reading and writing
+      the mib_indexes files in include/net-snmp/library/mib.h,
+      include/net-snmp/library/parse.h, snmplib/mib.c, snmplib/parse.c.
+    - CVE-2020-15861
+  * SECURITY UPDATE: Elevation of privileges
+    - debian/patches/CVE-2020-15862.patch: make the extend mib
+      read-only by default in agent/mibgroup/agent/extend.c.
+    - CVE-2020-15862
+
+ -- Leonidas S. Barbosa <leo.barbosa@canonical.com>  Mon, 17 Aug 2020 16:16:25 -0300
+
+net-snmp (5.7.3+dfsg-1.8ubuntu3.4) bionic; urgency=medium
+
+  * Remove user only on purge Closes: #911216 (LP: #1875926)
+
+ -- Christian Ehrhardt <christian.ehrhardt@canonical.com>  Tue, 12 May 2020 13:34:32 +0200
+
 net-snmp (5.7.3+dfsg-1.8ubuntu3.3) bionic; urgency=medium
 
   * d/p/put-paranthesis-around-macros-which-are-expressions.patch:

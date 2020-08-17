@@ -40,3 +40,5 @@ autofs-skip-autofs-entries.patch
 autofs-fix-a-recently-introduced-bug.patch
 put-paranthesis-around-macros-which-are-expressions.patch
 fix-check-hr-filesys-autofs.patch
+CVE-2020-15861.patch
+CVE-2020-15862.patch
