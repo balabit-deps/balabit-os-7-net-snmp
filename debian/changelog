@@ -1,3 +1,13 @@
+net-snmp (5.7.3+dfsg-1.8ubuntu3.6) bionic-security; urgency=medium
+
+  * SECURITY REGRESSION: The update for CVE-2020-15862 making mib extend
+    read-only caused nsExtendCacheTime to be not setable anymore (LP: #1892980)
+    - debian/patches/CVE-2020-15862-bug1893465.patch: add -cacheTime and
+      -execType flags to "extend" config directive in
+      agent/mibgroup/agent/extend.c, man/snmpd.conf.5.def.
+
+ -- Leonidas S. Barbosa <leo.barbosa@canonical.com>  Fri, 28 Aug 2020 17:14:41 -0300
+
 net-snmp (5.7.3+dfsg-1.8ubuntu3.5) bionic-security; urgency=medium
 
   * SECURITY UPDATE: Elevation of privileges - symlink handling
